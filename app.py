@@ -3,6 +3,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 vehicles = pd.read_csv('vehicles_us.csv')
+vehicles['price'] = vehicles['price'].astype(float)
+vehicles['model_year'] = vehicles['model_year'].astype(float)
+vehicles['odometer'] = vehicles['odometer'].astype(float)
+vehicles['cylinders'] = vehicles['cylinders'].astype(float)
+# converting variables to same type to make calculations easier
 # Streamlit app setup
 st.title('Vehicle Listings Data Visualization')
 
